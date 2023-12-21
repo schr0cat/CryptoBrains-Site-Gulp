@@ -1,0 +1,293 @@
+.footer {
+  padding-top: 120px;
+
+  background-color: var(--dark-shark-color);
+
+  &__top {
+    justify-content: space-between;
+
+    padding-bottom: 60px;
+
+    position: relative;
+
+    &:before {
+      position: absolute;
+
+      content: url(../img/trends-line.svg);
+
+      bottom: 0;
+    }
+
+    @include tablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__socials {
+    gap: 35px;
+  }
+
+  &__descr {
+    color: #fdfdfd;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__link {
+    transition: background-color .3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      background-color: rgba(173, 179, 191, .15);
+    }
+  }
+
+  &__middle {
+    padding: 60px 0;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+
+    position: relative;
+
+    &:after {
+      position: absolute;
+
+      content: url(../img/trends-line.svg);
+
+      bottom: 0;
+    }
+
+    @include tablet {
+      padding: 50px 0;
+    }
+  }
+
+  &__heading {
+    color: #fdfdfd;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+
+    margin: 0 0 20px;
+  }
+
+  &__text {
+    color: var(--gray-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    display: block;
+
+    width: fit-content;
+
+    transition: color .3s ease-in-out;
+
+    &--add {
+      color: var(--blue-color);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+
+      border-radius: 2px;
+      background-color: rgba(27, 112, 241, .1);
+
+      padding: 4px 8px;
+
+      margin-left: 6px;
+
+      display: inline;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  &__text:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  &__bottom {
+    padding: 60px 0 40px;
+
+    justify-content: space-between;
+
+    @include tablet {
+      padding-top: 50px;
+    }
+  }
+
+  &__list {
+    gap: 20px;
+  }
+
+  &__copy, &__txt-link {
+    color: #fdfdfd;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__txt-link {
+    padding-left: 26px;
+
+    background-image: url(../img/footer-circle.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    transition: color .3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      color: var(--gray-color);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  &__dropdowns {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__dropdown {
+    padding: 6px 42px 6px 14px;
+
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, .2);
+
+    background-image: url(../img/footer-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 85% center;
+
+    min-width: 105px;
+    max-width: 105px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    &:hover .footer__sublist {
+      opacity: 1;
+    }
+  }
+
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    opacity: 0;
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 50px;
+    left: 0;
+
+    transition: opacity .3s ease-in-out;
+  }
+
+  &__dropdown-link-heading {
+    color: #fdfdfd;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    transition: color .3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  &__dropdown-link {
+    color: #fdfdfd;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    padding: 5px;
+
+    background-color: rgba(173, 179, 191, .1);
+
+    transition: background-color .3s ease-in-out;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: block;
+
+    width: 110px;
+
+    text-align: center;
+
+    @include hover {
+      background-color: rgba(173, 179, 191, .15);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  @include big-desktop {
+    padding-top: 80px;
+  }
+
+  @include tablet {
+    padding-top: 64px;
+  }
+}
+
+.footer__logo.focus-visible, .footer__link.focus-visible, .footer__text.focus-visible, .footer__txt-link.focus-visible {
+  outline: 1px solid var(--blue-color);
+  outline-offset: 5px;
+}
+
+.footer__dropdown-link-heading.focus-visible {
+  outline: 1px solid var(--blue-color);
+  outline-offset: 15px;
+}

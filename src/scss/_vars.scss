@@ -1,0 +1,18 @@
+// colors
+:root {
+  // base
+  --font-family: "SourceSansPro", sans-serif;
+  --content-width: 1590px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // offsets
+  --section-offset: 120px;
+
+  // colors
+  --light-color: #fff;
+  --dark-color: #131517;
+  --dark-shark-color: #1e1f25;
+  --blue-color: #1b70f1;
+  --gray-color: #adb3bf;
+}

@@ -1,0 +1,191 @@
+.trends {
+  padding: var(--section-offset) 0;
+
+  background-color: var(--dark-color);
+
+  &__top {
+    justify-content: space-between;
+
+    padding-bottom: 60px;
+
+    margin-bottom: 60px;
+
+    position: relative;
+
+    &:after {
+      position: absolute;
+
+      content: url(../img/trends-line.svg);
+
+      bottom: 0;
+    }
+
+    @include tablet {
+      flex-direction: column;
+
+      padding-bottom: 40px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    gap: 30px;
+  }
+
+  &__link {
+    color: var(--gray-color);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+
+    transition: color .3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  &__bottom-link {
+    padding-left: 50px;
+    padding-right: 70px;
+
+    background-image: url(../img/hero-link-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 175px center;
+
+    margin: 0 auto;
+
+    display: block;
+
+    max-width: 240px;
+
+    transition: background-color .3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      background-color: rgba(27, 113, 241, 0.709);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  @include big-desktop {
+    padding: 80px 0;
+  }
+
+  @include tablet {
+    padding: 60px 0;
+  }
+}
+
+
+.trends-cards {
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    gap: 30px;
+  }
+
+  &__item {
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 2px solid var(--dark-shark-color);
+    border-radius: 10px;
+
+    max-width: 240px;
+    box-sizing: border-box;
+
+    @include tablet {
+      padding: 20px 15px;
+
+      max-width: none;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+
+    margin-bottom: 10px;
+
+    @include  tablet {
+      font-size: 24px;
+    }
+  }
+
+  &__level {
+    color: #06b470;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    padding-left: 24px;
+
+    background-image: url(../img/hero-level-up.svg);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 20px;
+
+      padding-left: 34px;
+
+      background-size: 25px;
+    }
+  }
+
+  &__price {
+    color: var(--light-color);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+
+    margin-bottom: 20px;
+  }
+
+  &__graph {
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.trends__link.focus-visible, .trends__bottom-link.focus-visible {
+  outline: 1px solid var(--blue-color);
+  outline-offset: 5px;
+}

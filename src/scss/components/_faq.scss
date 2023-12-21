@@ -1,0 +1,133 @@
+.faq {
+  padding: 20px 0 var(--section-offset);
+
+  background-color: var(--dark-color);
+  background-image: url(../img/faq-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__descr {
+    color: var(--gray-color);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+    margin: 0;
+
+    padding-bottom: 60px;
+
+    position: relative;
+
+    &:after {
+      position: absolute;
+
+      content: url(../img/trends-line.svg);
+
+      bottom: 0;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    @include tablet {
+      font-size: 22px;
+    }
+  }
+
+  &__questions {
+    padding-top: 60px;
+  }
+
+  &__column {
+    grid-column: 6 span;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  @include tablet {
+    padding: 64px 0;
+  }
+}
+
+
+.faq-question {
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
+
+  position: relative;
+
+  &__title {
+    color: var(--light-color);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+
+    margin: 0 0 20px;
+
+    @include tablet {
+      padding-right: 35px;
+    }
+  }
+
+  &__descr {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition: all .3s ease-in-out;
+
+    color: var(--gray-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+    margin: 0;
+
+    max-width: 690px;
+
+    &--open .faq-question__descr {
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+
+    top: 21px;
+    right: 16px;
+
+    color: var(--light-color);
+
+    font-size: 36px;
+
+    transition: transform .3s ease-in-out;
+
+    padding: 0 15px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.faq-question__descr--open .faq-question__btn {
+  transform: rotate(45deg);
+}
+
+.faq-question__btn.focus-visible {
+  outline: 1px solid var(--blue-color);
+  outline-offset: 1px;
+}

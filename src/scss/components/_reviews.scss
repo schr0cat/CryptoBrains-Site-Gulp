@@ -1,0 +1,154 @@
+.reviews {
+  padding: var(--section-offset) 0;
+
+  background-color: var(--dark-shark-color);
+  background-image: url(../img/start-bg.png);
+
+  &__top {
+    padding-bottom: 60px;
+
+    position: relative;
+
+    &:after {
+      position: absolute;
+
+      content: url(../img/trends-line.svg);
+
+      bottom: 0;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    @include tablet {
+      padding-bottom: 40px;
+
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    min-width: 645px;
+
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__descr {
+    color: var(--gray-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+    margin: 0;
+
+    @include tablet {
+      text-align: center;
+
+      font-size: 22px;
+    }
+  }
+
+  &__slider {
+    padding: 60px 0 55px;
+
+    @include tablet {
+      padding-top: 40px;
+
+      padding: 40px 0 24px;
+    }
+  }
+
+  &__pagination {
+    top: 425px;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  @include big-desktop {
+    padding: 80px 0;
+  }
+
+  @include tablet {
+    padding: 64px 0;
+  }
+}
+
+
+.reviews-slide {
+  padding: 40px 30px;
+
+  background-color: #272a34;
+
+  border-radius: 10px;
+
+  max-width: 645px;
+
+  box-sizing: border-box;
+
+  user-select: none;
+
+  &__top {
+    gap: 20px;
+
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    color: var(--light-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+
+    margin: 0 0 2px;
+  }
+
+  &__address {
+    color: #bfc4cd;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+
+    display: block;
+  }
+
+  &__img {
+    margin-left: auto;
+  }
+
+  &__quote {
+    margin: 0;
+  }
+
+  &__descr {
+    margin: 0;
+
+    color: var(--light-color);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+  }
+}
+
+.reviews__slider .swiper-pagination-bullet {
+  border-radius: initial;
+  width: 30px;
+  height: 4px;
+
+  background-color: rgba(255, 255, 255, .2);
+
+  margin: 0 5px !important;
+}
+
+.reviews__slider .swiper-pagination-bullet-active {
+  width: 40px;
+
+  background-color: #cfd3da;
+}

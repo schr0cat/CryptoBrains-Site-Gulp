@@ -1,0 +1,146 @@
+.download {
+  padding: var(--section-offset) 0;
+
+  background-color: var(--dark-color);
+  background-image: url(../img/download-bg.png);
+  background-repeat: no-repeat;
+  background-position: right 95px;
+
+  position: relative;
+
+  &:after {
+    position: absolute;
+
+    content: url(../img/download-1.png);
+
+    top: 50%;
+    right: 0;
+
+    transform: translateY(-50%);
+
+    @include big-desktop {
+      content: url(../img/download-1_075x.png);
+    }
+
+    @include tablet {
+      content: none;
+    }
+  }
+
+  &__container {
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 146px var(--container-offset);
+
+    position: relative;
+
+    z-index: 3;
+
+    @include big-desktop {
+      padding: 90px var(--container-offset);
+    }
+
+    @include tablet {
+      padding: 48px var(--container-offset);
+
+      align-items: center;
+    }
+  }
+
+  &__title {
+    max-width: 780px;
+
+    margin: 0 0 30px;
+
+    @include big-desktop {
+     max-width: 670px;
+    }
+
+    @include tablet {
+      text-align: center;
+      line-height: 64px;
+    }
+  }
+
+  &__descr {
+    color: var(--gray-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+    margin: 0 0 80px;
+
+    max-width: 780px;
+
+    @include tablet {
+      max-width: none;
+
+      text-align: center;
+      font-size: 22px;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__links {
+    gap: 30px;
+  }
+
+  &__link {
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+    padding: 14px 32px 14px 74px;
+
+    background-repeat: no-repeat;
+    background-position: 28px center;
+
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 4px;
+
+    transition: background-color .3s ease-in-out;
+
+    &--app-store {
+      background-image: url(../img/download-icon1.svg);
+    }
+
+    &--play-market {
+      background-image: url(../img/download-icon2.svg);
+    }
+
+    &--qr {
+      padding: 12px 40px;
+
+      background-position: center;
+      background-image: url(../img/download-icon3.svg);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @include hover {
+      background-color: rgba(173, 179, 191, .15);
+    }
+
+    &:active {
+      color: var(--blue-color);
+    }
+  }
+
+  @include big-desktop {
+    padding: 80px 0;
+  }
+
+  @include tablet {
+    padding: 34px 0;
+  }
+}
+
+.download__link.focus-visible {
+  outline: 1px solid var(--blue-color);
+  outline-offset: 5px;
+}
