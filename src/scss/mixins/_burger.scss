@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: var(--burger-line-height);
-    background-color: currentColor;
+    background-color: transparent;
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   }
 
@@ -49,12 +49,16 @@
       top: 50%;
       transform: rotate(45deg);
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+
+      background-color: currentColor;
     }
 
     &::after {
       top: 50%;
       transform: rotate(-45deg);
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+
+      background-color: currentColor;
     }
 
     .burger__line {

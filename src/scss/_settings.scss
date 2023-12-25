@@ -159,3 +159,11 @@ a {
   grid-template-columns: repeat(12, 1fr);
   gap: 30px;
 }
+
+.burger {
+  @include burger;
+
+  margin-left: 30px;
+
+  color: var(--light-color);
+}

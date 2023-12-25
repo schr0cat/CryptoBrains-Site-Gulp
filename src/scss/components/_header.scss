@@ -3,8 +3,18 @@
 
   background-color: #1e1f25;
 
+  @include mobile {
+    padding: 30px 0 20px;
+  }
+
   &__container {
     justify-content: space-between;
+
+    @include mobile {
+      padding: 0 20px;
+
+      justify-content: start;
+    }
   }
 
   &__logo {
@@ -24,6 +34,42 @@
 
   &__list {
     gap: 40px;
+
+    &--desktop {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 60%;
+        height: 100vh;
+
+        z-index: 50;
+
+        background-color: #24242a;
+
+        overflow-y: auto;
+
+        padding: 40px 0 30px;
+
+        gap: 30px;
+
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+    }
   }
 
   &__item {
@@ -43,10 +89,18 @@
       right: 0;
 
       content: url(../img/header-arrow.svg);
+
+      @include mobile {
+        content: none;
+      }
     }
 
     &:nth-child(3) ~ &:before, &:nth-child(4) ~ &:before {
       display: none;
+    }
+
+    @include mobile {
+      padding-right: 0;
     }
   }
 
@@ -57,6 +111,16 @@
     font-weight: 400;
 
     transition: color .3s ease-in-out;
+
+    @include mobile {
+      font-size: 20px;
+
+      text-align: center;
+
+      width: 100%;
+
+      display: block;
+    }
 
     &:focus {
       outline: none;
@@ -115,6 +179,10 @@
 
   &__login {
     gap: 10px;
+
+    @include mobile {
+      margin-left: auto;
+    }
   }
 
   &__login-link {
@@ -125,6 +193,12 @@
     padding: 13px 39px;
 
     transition: background-color .3s ease-in-out;
+
+    @include mobile {
+      @include hover {
+        transition: color .3s ease-in-out;
+      }
+    }
 
     &:focus {
       outline: none;
@@ -138,6 +212,12 @@
       color: var(--blue-color);
     }
 
+    &--stroke {
+      @include mobile {
+        display: none;
+      }
+    }
+
     &--fill {
       font-size: 20px;
       line-height: 32px;
@@ -145,12 +225,25 @@
       border-radius: 4px;
       background: #1b70f1;
 
+      @include mobile {
+        font-size: 18px;
+        color: #cfd3da;
+
+        background-color: transparent;
+      }
+
       &:focus {
         outline: none;
       }
 
       @include hover {
         background-color: rgba(27, 113, 241, 0.709);
+
+        @include mobile {
+          background-color: transparent;
+
+          color: var(--light-color);
+        }
       }
 
       &:active {
@@ -161,10 +254,23 @@
     @include tablet {
       padding: 7px 19px;
     }
+
+    @include mobile {
+      padding: 0;
+    }
   }
 }
 
 .header__logo.focus-visible, .header__link.focus-visible, .header__login-link.focus-visible, .header__login-link--fill.focus-visible {
   outline: 1px solid var(--blue-color);
   outline-offset: 5px;
+}
+
+.header__list--mobile.menu--active {
+  visibility: visible;
+  transform: none;
+}
+
+.burger--active .header__burger-img {
+  display: none;
 }

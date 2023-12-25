@@ -5,7 +5,7 @@
     </a>
 
     <nav class="header__nav">
-      <ul class="header__list list-reset flex">
+      <ul class="header__list header__list--desktop list-reset flex">
         <li class="header__item">
           <a class="header__link" href="#">Market</a>
           <ul class="header__sublist list-reset">
@@ -49,11 +49,45 @@
           <a class="header__link" href="#">Career</a>
         </li>
       </ul>
+
+      <ul class="header__list--mobile list-reset flex" data-menu>
+        <li class="header__item">
+          <a class="header__link" href="#">Market</a>
+        </li>
+
+        <li class="header__item">
+          <a class="header__link" href="#">Trade</a>
+        </li>
+
+        <li class="header__item">
+          <a class="header__link" href="#">Earn</a>
+        </li>
+
+        <li class="header__item">
+          <a class="header__link" href="#">About</a>
+        </li>
+
+        <li class="header__item">
+          <a class="header__link" href="#">Career</a>
+        </li>
+
+        <li class="header__item">
+          <a class="header__link" href="#">About</a>
+        </li>
+
+        <li class="header__item">
+          <a class="header__link" href="#">Log&nbsp;In</a>
+        </li>
+      </ul>
     </nav>
 
     <div class="header__login flex-v-center">
-      <a class="header__login-link" href="#">Log&nbsp;In</a>
+      <a class="header__login-link header__login-link--stroke" href="#">Log&nbsp;In</a>
       <a class="header__login-link header__login-link--fill" href="#">Sign&nbsp;Up</a>
     </div>
+
+    <button class="btn-reset burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+      <img class="header__burger-img" src="img/header-burger.svg" alt="Header menu">
+    </button>
   </div>
 </header>
